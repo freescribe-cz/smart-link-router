@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Smart Link Router",
-  "description": "Route links from specific tabs to a chosen window automatically",
+  "description": "Route tabs to open links in a chosen window",
   "version": "1.0",
   "permissions": [
     "tabs",
