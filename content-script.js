@@ -20,8 +20,15 @@ document.addEventListener("click", (event) => {
    const target = anchor.getAttribute("target");
    if (target && target !== "_self") return;
 
-   const href = anchor.href;
-   if (!href || href.startsWith("javascript:")) return;
+   const href = anchor.getAttribute("href");
+   // Ignore JS-only, dummy links, same-page links
+   if (
+      !href ||
+      href.startsWith("#") ||
+      href.startsWith("javascript:")
+   ) {
+      return;
+   }
 
    // Stop browser navigation immediately
    event.preventDefault();
