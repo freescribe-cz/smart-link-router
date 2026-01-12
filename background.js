@@ -4,12 +4,12 @@ const STORAGE_KEY = "tabRoutes";
 // shape: { [tabId: number]: windowId }
 
 async function getRoutes() {
-   const res = await chrome.storage.local.get(STORAGE_KEY);
+   const res = await chrome.storage.session.get(STORAGE_KEY);
    return res[STORAGE_KEY] || {};
 }
 
 async function setRoutes(routes) {
-   await chrome.storage.local.set({ [STORAGE_KEY]: routes });
+   await chrome.storage.session.set({ [STORAGE_KEY]: routes });
 }
 
 async function setRoute(tabId, windowId) {
