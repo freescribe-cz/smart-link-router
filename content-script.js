@@ -18,7 +18,7 @@ document.addEventListener("click", (event) => {
    if (!anchor) return;
 
    const target = anchor.getAttribute("target");
-   if (target && target !== "_self") return;
+   if (target && target !== "_self" && target !== "_blank") return;
 
    const hrefAttr = anchor.getAttribute("href");
    // Ignore JS-only, dummy links, same-page links
